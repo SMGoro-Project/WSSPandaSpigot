@@ -1,0 +1,32 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: RENaa_FD <92320175+lRENyaaa@users.noreply.github.com>
+Date: Tue, 26 Aug 2025 06:14:16 +0800
+Subject: [PATCH] Rebrand for WSS
+
+
+diff --git a/src/main/java/net/minecraft/server/MinecraftServer.java b/src/main/java/net/minecraft/server/MinecraftServer.java
+index ddc201207d3ec6ca278de6b3bcacebc2d258dad6..8388468334c4146eba0e02f8df69929d363d265f 100644
+--- a/src/main/java/net/minecraft/server/MinecraftServer.java
++++ b/src/main/java/net/minecraft/server/MinecraftServer.java
+@@ -1169,7 +1169,7 @@ public abstract class MinecraftServer implements Runnable, ICommandListener, IAs
+     }
+ 
+     public String getServerModName() {
+-        return "PandaSpigot"; // PandaSpigot - PandaSpigot > // PaperSpigot - PaperSpigot > // Spigot - Spigot > // CraftBukkit - cb > vanilla!
++        return "WSSPandaSpigot"; // WSSPandaSpigot - WSSPandaSpigot > // PandaSpigot - PandaSpigot > // PaperSpigot - PaperSpigot > // Spigot - Spigot > // CraftBukkit - cb > vanilla!
+     }
+ 
+     public CrashReport b(CrashReport crashreport) {
+diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
+index 0c6cdfed088a26380e6fe7052e747efeedda7b1e..8b66b73cc3e074bb1eb069c425dfb5e6147ddd65 100644
+--- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
++++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
+@@ -127,7 +127,7 @@ import net.md_5.bungee.api.chat.BaseComponent;
+ 
+ public final class CraftServer implements Server {
+     private static final Player[] EMPTY_PLAYER_ARRAY = new Player[0];
+-    private final String serverName = "PandaSpigot"; // PandaSpigot
++    private final String serverName = "WSSPandaSpigot"; // WSSPandaSpigot - WSSPandaSpigot > // PandaSpigot
+     private final String serverVersion;
+     private final String bukkitVersion = Versioning.getBukkitVersion();
+     private final Logger logger = Logger.getLogger("Minecraft");
