@@ -1,0 +1,35 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: RENaa_FD <92320175+lRENyaaa@users.noreply.github.com>
+Date: Wed, 27 Aug 2025 00:43:25 +0800
+Subject: [PATCH] Backport some player API from newer Minecraft versions
+
+Some plugins, such as PacketEvents, rely on these APIs without considering backward compatibility. Backporting them ensures better compatibility for older versions.
+
+diff --git a/src/main/java/org/bukkit/entity/Player.java b/src/main/java/org/bukkit/entity/Player.java
+index ec6187582a696f5705390eac92a04a36511c3a6c..488b3d64e7f5ea84c6e05c54b8c131ca24751462 100644
+--- a/src/main/java/org/bukkit/entity/Player.java
++++ b/src/main/java/org/bukkit/entity/Player.java
+@@ -1200,6 +1200,23 @@ public interface Player extends HumanEntity, Conversable, CommandSender, Offline
+     public void resetTitle();
+ 
+     // PandaSpigot start
++
++    /**
++     * Backport from newer Bukkit versions.
++     * @return the player's ping in milliseconds
++     */
++    int getPing();
++
++
++    /**
++     * Returns whether the player is currently connected.
++     * Backport from newer Bukkit versions.
++     * @return true if the player is connected, false otherwise
++     */
++    default boolean isConnected() {
++        return false;
++    }
++
+     /**
+      * Gets a copy of this players profile
+      * @return The players profile object
